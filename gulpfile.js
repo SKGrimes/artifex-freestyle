@@ -49,7 +49,7 @@ const notify = require('gulp-notify');
 //  Non-Gulp & User
 // =================
 const path = require('path');
-const config = require('./config.json');
+const config = require('./config/task-config.json');
 
 // =================
 //  Gulp Tasks
@@ -75,29 +75,26 @@ gulp.task('images', () => {
 // Compiles just vendor Sass
 // -------------------------
 // In production, the CSS is compressed
-gulp.task('vendor', () => {
-    return gulp.src(config.sass.file)
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-                includePaths: config.sass.paths,
-            })
-            .on('error', sass.logError))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions', 'ie >= 9'],
-        }))
-        // Comment in the pipe below to run UnCSS in production
-        //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
-        .pipe(cssnano())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(path.join(config.dist, '/stylesheets')));
-});
+// gulp.task('vendor', () => {
+//     return gulp.src(config.sass.file)
+//         .pipe(sourcemaps.init())
+//         .pipe(sass({
+//                 includePaths: config.sass.paths,
+//             })
+//             .on('error', sass.logError))
+//         .pipe(autoprefixer({
+//             browsers: ['last 2 versions', 'ie >= 9'],
+//         }))
+//         // Comment in the pipe below to run UnCSS in production
+//         //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+//         .pipe(cssnano())
+//         .pipe(sourcemaps.write())
+//         .pipe(gulp.dest(path.join(config.dist, '/stylesheets')));
+// });
 
 gulp.task('js', () => {
     return gulp.src(config.javascript)
         .pipe(sourcemaps.init())
-        .pipe(babel({
-            presets: ['es2015'],
-        }))
         .pipe(concat('app.js'))
         // .pipe(uglify()
         //   .on('error', e => { console.log(e); })
@@ -144,7 +141,7 @@ gulp.task('watch', () => {
 });
 
 
-gulp.task('default', ['images', 'js', 'vendor', 'sass', 'watch']);
+gulp.task('default', ['images', 'js', 'sass', 'watch']);
 
 // gulp.task('develop', function () {
 //   livereload.listen();

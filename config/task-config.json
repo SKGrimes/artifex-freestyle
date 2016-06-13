@@ -1,16 +1,17 @@
 {
-    "dist": "app/public",
+    "dist": "public",
     "sass": {
-        "bespoke": "src/scss",
-        "file": "src/vendor-styles/app.scss",
+        "bespoke": "src/stylesheets",
+        "file": "src/vendor-styles/main.scss",
         "paths": [
-            "src/components/foundation-sites/scss",
+            "src/components/milligram/dist/",
             "src/components/motion-ui/src",
             "src/components/slick-carousel/slick"
         ]
     },
     "javascript": [
-        "src/components/jquery/dist/jquery.js",
-        "src/js/!(app).js"
+        "src/components/jquery/dist/jquery.min.js",
+        "src/components/waypoints/lib/jquery.waypoints.min.js",
+        "src/js/app.js"
     ]
 }
