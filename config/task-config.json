@@ -1,0 +1,16 @@
+{
+    "dist": "app/public",
+    "sass": {
+        "bespoke": "src/scss",
+        "file": "src/vendor-styles/app.scss",
+        "paths": [
+            "src/components/foundation-sites/scss",
+            "src/components/motion-ui/src",
+            "src/components/slick-carousel/slick"
+        ]
+    },
+    "javascript": [
+        "src/components/jquery/dist/jquery.js",
+        "src/js/!(app).js"
+    ]
+}
