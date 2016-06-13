@@ -1,0 +1,12 @@
+nav {
+    ul {
+        list-style: none;
+        max-width: 60%;
+        margin-left: 20%;
+        li {
+            display: inline-block;
+            @extend .column;
+
+        }
+    }
+}
