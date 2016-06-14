@@ -921,12 +921,36 @@ h6 {
 .clearfix:after {
   clear: both; }
 
-nav ul {
-  list-style: none;
-  max-width: 60%;
-  margin-left: 20%; }
-  nav ul li {
-    display: inline-block; }
+h1 {
+  font-size: 2em;
+  line-height: 1;
+  font-weight: 500;
+  margin: 0; }
+  h1:last-child {
+    margin-bottom: 20px; }
+
+div {
+  font-size: 1em;
+  line-height: 1.2;
+  margin-bottom: 10px; }
+
+ul {
+  list-style: none; }
+
+.first {
+  float: right; }
+
+nav {
+  max-height: 52px;
+  background: #e6e6e6; }
+  nav ul {
+    box-sizing: border-box;
+    list-style: none;
+    padding-top: 14px;
+    max-width: 60%;
+    margin-left: 20%; }
+    nav ul li {
+      display: inline-block; }
 
 #about {
   background: url(../images/hero.png);
@@ -935,3 +959,17 @@ nav ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center; }
+
+#masthead {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #masthead .img {
+    max-width: 50%; }
+
+#vanity {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #vanity .img {
+    max-width: 50%; }
